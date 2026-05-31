@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff8f8;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #08901a;
+  padding: 15px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav::before {
+  content: "🍅뽀모도로 타이머🍅";
+  font-size: 18px;
+  font-weight: 900;
+  color: aliceblue;
+
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.page-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.15);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  color: #e74c3c;
+  margin-bottom: 24px;
+}
+
+.page-title::before {
+  content: "🍅 ";
+}
+
+/* 타이머 */
+.timer-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.timer-display {
+  font-size: 80px;
+  color: #e74c3c;
+  letter-spacing: 6px;
+  font-weight: bold;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tomato-spinner {
+  position: fixed;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 300px;
+  z-index: -10;
+  opacity: 0.7;
+  animation: none;
+}
+
+.tomato-spinner.spinning {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 버튼 */
+.btn-main {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-main:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.btn-sub {
+  background-color: white;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-sub:hover {
+  background-color: #fff0f0;
+}
+
+.btn-add {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #c0392b;
+}
+
+.btn-delete {
+  background-color: white;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-delete:hover {
+  background-color: #fff0f0;
+}
+
+/* 과목 */
+.subject-box {
+  border-top: 1px solid #ffd5d5;
+  padding-top: 20px;
+}
+
+.subject-select {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ffd5d5;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  color: #333;
+}
+
+.subject-add {
+  display: flex;
+  gap: 10px;
+}
+
+.subject-input {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid #ffd5d5;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.subject-input:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+/* 히스토리이이!!!!! */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.session-card {
+  background-color: #fff8f8;
+  border: 1.5px solid #ffd5d5;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.session-card::before {
+  content: "🍅";
+  font-size: 18px;
+}
+
+.session-subject {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.session-duration {
+  color: #555;
+  font-size: 14px;
+}
+
+.session-date {
+  color: #999;
+  font-size: 13px;
+}
+
+/* 대쉬보드!!!! */
+.stats-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #fff8f8;
+  border: 1.5px solid #ffd5d5;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card::before {
+  content: "🍅";
+  font-size: 22px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  color: #e74c3c;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.chart-title {
+  color: #e74c3c;
+  margin: 20px 0 10px;
+  font-size: 18px;
+}
+
+.chart-title::before {
+  content: "🍅 ";
+}
+
+.loading {
+  text-align: center;
+  font-size: 24px;
+  color: #e74c3c;
+  margin-top: 100px;
+}
